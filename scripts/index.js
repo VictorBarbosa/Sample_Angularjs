@@ -11,7 +11,33 @@ ang.controller('control', function ($scope) {
         delete   $scope.value;
              
     }
+    $scope.colors = [
+     {name:'black',  },
+     {name:'black',  },
+     {name:'white',  },
+     {name:'white',  },
+     {name:'red',    },
+     {name:'red',    },
+     {name:'yellow', },
+     {name:'yellow', }
+];
+
+ $scope.list = [
+        { 'name' : "ipad" },
+        { 'name' : "ipad" },
+        { 'name' : "ipad" },
+        { 'name' : "ipod" },
+        { 'name' : "iMac" },
+        { 'name' : "iMac" },
+        { 'name' : "iMac" },
+        { 'name' : "iPhone" },
+        { 'name' : "iWatch" },
+        { 'name' : "iWatch" },
+        { 'name' : "iWatch" },
+        { 'name' : "iPeed" }
+        ];
     $scope.Delete = function (index) {
         $scope.People.pop(index)
     }
 })
+ 

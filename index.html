@@ -11,55 +11,57 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script src="scripts/index.js"></script>
-   
+
 </head>
 
 <body ng-controller="control">
+
+
     <h1 class="text-center">A little sample using angularjs</h1>
     <h1 class="text-center">Un petit exemple en utilisant angularjs</h1>
     <div class="container">
         <form style="width: 49%;float: left;display: block;" >
-            <legend>New</legend>
-            <div class="form-group">
-                <label for="">Name</label>
-                <input type="text" class="form-control" ng-model="person.name"   placeholder="Name">
-            </div>
-              <div class="form-group">
-                <label for="">Age</label>
-                <input type="text" class="form-control"  ng-model="person.age"    placeholder="Age">
-            </div>
-             <div class="form-group">
-                <label for="">Country</label>
-                <input type="text" class="form-control"  ng-model="person.country"    placeholder="Country">
-            </div>
-            <button type="submit" ng-click="Add(person)" class="btn btn-primary">Add</button>
-       </form>i
-        <form  style="width: 49%;float: right;display: block;" >
-            <legend>Filter</legend>
-            <div class="form-group">
-                <label for="">Name</label>
-                <input type="text" class="form-control" ng-model="filterName" id="" placeholder="Name">
-            </div>
-              <div class="form-group">
-                <label for="">Age</label>
-                <input type="text" class="form-control" ng-model="filterAge"  id="" placeholder="Age">
-            </div>
-              <div class="form-group">
-                <label for="">Country</label>
-                {{Amigo}}
-                <select class="form-control" ng-options="p.country for p  in People" ng-model="filterSeachr" >               
+<select ng-model="Teste" ng-options="color.name for color in colors | unique:'name'"></select>
+<legend>New</legend>
+<div class="form-group">
+    <label for="">Name</label>
+    <input type="text" class="form-control" ng-model="person.name" placeholder="Name">
+</div>
+<div class="form-group">
+    <label for="">Age</label>
+    <input type="text" class="form-control" ng-model="person.age" placeholder="Age">
+</div>
+<div class="form-group">
+    <label for="">Country</label>
+    <input type="text" class="form-control" ng-model="person.country" placeholder="Country">
+</div>
+<button type="submit" ng-click="Add(person)" class="btn btn-primary">Add</button>
+</form>i
+<form style="width: 49%;float: right;display: block;" >
+<legend>Filter</legend>
+<div class="form-group">
+    <label for="">Name</label>
+    <input type="text" class="form-control" ng-model="filterName" id="" placeholder="Name">
+</div>
+<div class="form-group">
+    <label for="">Age</label>
+    <input type="text" class="form-control" ng-model="filterAge" id="" placeholder="Age">
+</div>
+<div class="form-group">
+    <label for="">Country</label>
+    <select class="form-control" ng-options="p.country for p  in People" ng-model="filterSeachr">               
                 </select>
-             </div>
-        </form>
-    </div>
-    <div class="container">
-     
+</div>
+</form>
+</div>
+<div class="container">
+
     <table class="table table-striped table-hover table-bordered ">
         <thead>
             <tr>
                 <th>Name</th>
-                <th>Age</th> 
-                <th>Country</th> 
+                <th>Age</th>
+                <th>Country</th>
             </tr>
         </thead>
         <tbody>
@@ -69,8 +71,9 @@
                 <td>{{person.country}}</td>
             </tr>
         </tbody>
-    </table> 
- </div>
+    </table>
+</div>
 </body>
-</html>
 
+</html>
+ 
