@@ -1,81 +1,47 @@
 <!DOCTYPE html>
 <html ng-app="app" lang="">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Title Page</title>
+      <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" >
+      <script src="//code.jquery.com/jquery.js"></script>
+      <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+      <link rel="stylesheet" href="">
+      <meta charset="utf-8">
+      <meta name="robots" content="noindex">
+      <link rel="stylesheet" href="css/style.css">
+    
+      <script src="scripts/app.js"></script>
+        <script src="lib/angular-route.js"></script>
+        <script src="scripts/config/route-config.js"></script>
+      <script src="scripts/index.js"></script>
+      <script src="scripts/controllers/newUser.js"></script>
+      <script src="scripts/services/unique.js"></script>
+      <script src="scripts/services/specificSearch.js"></script>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Title Page</title>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-    <script src="//code.jquery.com/jquery.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-    <script src="scripts/index.js"></script>
-    <script src="services/unique.js"></script>
-    <script src="services/specificSearch.js"></script>
-
-</head>
-
-<body ng-controller="control">
-
-
-    <h1 class="text-center">A little sample using angularjs</h1>
-    <h1 class="text-center">Un petit exemple en utilisant angularjs</h1>
-    <div class="container">
-     <form style="width: 49%;float: left;display: block;" >
-
-<legend>New</legend>
-<div class="form-group">
-    <label for="">Name</label>
-    <input type="text" class="form-control" ng-model="person.name" placeholder="Name">
-</div>
-<div class="form-group">
-    <label for="">Age</label>
-    <input type="text" class="form-control" ng-model="person.age" placeholder="Age">
-</div>
-<div class="form-group">
-    <label for="">Country</label>
-    <input type="text" class="form-control" ng-model="person.country" placeholder="Country">
-</div>
-<button type="submit" ng-click="Add(person)" class="btn btn-primary">Add</button>
-</form>
-<form style="width: 49%;float: right;display: block;" >
-<legend>Filter</legend>
-<div class="form-group">
-    <label for="">Name</label>
-    <input type="text" class="form-control" ng-model="filterName" id="" placeholder="Name">
-</div>
-<div class="form-group">
-    <label for="">Age</label>
-    <input type="text" class="form-control" ng-model="filterAge" id="" placeholder="Age">
-</div>
-<div class="form-group">
-    <label for="">Country</label>
-    <select class="form-control" ng-options="p.country for p  in People |unique:'country'" ng-model="filterSeachr">
-        <option value="">All</option>
-    </select>
-</div>
-</form>
-</div>
-<div class="container">
-
-    <table class="table table-striped table-hover table-bordered ">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Country</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-dblclick="Delete($index)" ng-repeat="person in People | filter:filterName:name| filter:filterAge:age| specificSearce:filterSeachr:country">
-                <td>{{person.name}}</td>
-                <td>{{person.age}}</td>
-                <td>{{person.country}}</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-</body>
-
+    
+   </head>
+   <body ng-controller="control">
+      <div id="wrapper" class="active">
+         <div id="sidebar-wrapper">
+            <ul id="sidebar_menu" class="sidebar-nav">
+               <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span id="main_icon" class="glyphicon glyphicon-align-justify"></span></a></li>
+            </ul>
+            <ul class="sidebar-nav" id="sidebar">
+               <li><a href="#/">List<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+               <li><a href="#/new">New<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+            </ul>
+         </div>
+         <!-- Page content -->
+         <div id="page-content-wrapper">
+            <h1 style="margin-top:0%" class="text-center">A little sample using angularjs</h1>
+            <h1 style="margin-top:0%" class="text-center">Un petit exemple en utilisant angularjs</h1>
+              <div class="container">
+              <div ng-view></div>
+         </div>
+      </div>
+   </body>
 </html>
