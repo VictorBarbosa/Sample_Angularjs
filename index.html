@@ -1,20 +1,23 @@
-<!DOCTYPE html>
-<html ng-app="app" lang="">
+<html ng-app="app">
    <head>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Title Page</title>
-      <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" >
+      <title> </title>
+     
+      <link href="/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+      <link href="/css/bootstrap.css" rel="stylesheet" type="text/css">
+      <link href="/css/core.css" rel="stylesheet" type="text/css">
+      <link href="/css/components.css" rel="stylesheet" type="text/css">
+  
+      <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
       <script src="//code.jquery.com/jquery.js"></script>
       <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-      <link rel="stylesheet" href="">
-      <meta charset="utf-8">
-      <meta name="robots" content="noindex">
-      <link rel="stylesheet" href="css/style.css">
+       <script type="text/javascript" src="scripts/core/app.js"></script>
     
-      <script src="scripts/app.js"></script>
+ 
+       <script src="scripts/app.js"></script>
         <script src="lib/angular-route.js"></script>
         <script src="scripts/config/route-config.js"></script>
       <script src="scripts/index.js"></script>
@@ -22,26 +25,65 @@
       <script src="scripts/services/unique.js"></script>
       <script src="scripts/services/specificSearch.js"></script>
 
-    
+
    </head>
-   <body ng-controller="control">
-      <div id="wrapper" class="active">
-         <div id="sidebar-wrapper">
-            <ul id="sidebar_menu" class="sidebar-nav">
-               <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span id="main_icon" class="glyphicon glyphicon-align-justify"></span></a></li>
-            </ul>
-            <ul class="sidebar-nav" id="sidebar">
-               <li><a href="#/">List<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-               <li><a href="#/new">New<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+   <body ng-controller="control" class="navbar-top  pace-done">
+      <div class="pace  pace-inactive">
+         <div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+            <div class="pace-progress-inner"></div>
+         </div>
+         <div class="pace-activity"></div>
+      </div>
+      <!-- Main navbar -->
+      <div class="navbar navbar-inverse navbar-fixed-top">
+         <div class="navbar-header">
+            <a class="navbar-brand" href="#"><img style="visibility: collapse;"  src="" alt=""></a>
+            <ul class="nav navbar-nav pull-right visible-xs-block">
+               <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+               <li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
             </ul>
          </div>
-         <!-- Page content -->
-         <div id="page-content-wrapper">
-            <h1 style="margin-top:0%" class="text-center">A little sample using angularjs</h1>
-            <h1 style="margin-top:0%" class="text-center">Un petit exemple en utilisant angularjs</h1>
-              <div class="container">
+         <div class="navbar-collapse collapse" id="navbar-mobile">
+            <ul class="nav navbar-nav">
+               <li><a class="sidebar-control sidebar-main-toggle hidden-xs"><i class="icon-paragraph-justify3"></i></a></li>
+            </ul>
+         </div>
+      </div>
+      <!-- /main navbar -->
+      <!-- Page container -->
+      <div class="page-container" style="min-height:902px">
+      <!-- Page content -->
+      <div class="page-content">
+         <!-- Main sidebar -->
+         <div class="sidebar sidebar-main sidebar-fixed " style="z-index:900">
+            <div class="sidebar-content " style="overflow-y: hidden; outline: none;" tabindex="1">
+               <!-- /user menu -->
+               <!-- Main navigation -->
+               <div class="sidebar-category sidebar-category-visible">
+                  <div class="category-content no-padding">
+                     <ul class="navigation navigation-main navigation-accordion" style="margin-top:0px;padding-top:0px">
+                        <li class="navigation-header" style="background:#222;">
+                           <span>Main</span>
+                           <i class="icon-menu" title="" data-original-title="Main pages"></i>
+                        </li>
+                        <li><a href="/"><i class="icon-home4"></i> <span>Home</span></a></li>
+                        <!--  INICIO MENU-->
+                        <li>
+                           <a href="#" class="has-ul"><i class="icon-stack"></i> <span>User</span></a>
+                           <ul class="hidden-ul">
+                              <li><a href="#/list">List</a></li>
+                              <li><a href="#/new">New</a></li>
+                           </ul>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="content-wrapper">
+               <h1 style="margin-top:0%" class="text-center">A little sample using angularjs</h1>
+               <h1 style="margin-top:0%" class="text-center">Un petit exemple en utilisant angularjs</h1>
               <div ng-view></div>
          </div>
       </div>
+      </div>
    </body>
-</html>
