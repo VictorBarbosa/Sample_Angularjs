@@ -21,13 +21,16 @@
         <script src="lib/angular-route.js"></script>
         <script src="scripts/config/route-config.js"></script>
       <script src="scripts/index.js"></script>
-      <script src="scripts/controllers/newUser.js"></script>
+    
       <script src="scripts/services/unique.js"></script>
       <script src="scripts/services/specificSearch.js"></script>
-
+      <script src="scripts/controllers/crudAngular/create.js"></script>
+      <script src="scripts/controllers/crudAngular/index.js"></script>
+      <script src="scripts/services/userService.js"></script>
+      <script src="scripts/factory/pass-param.js"></script>
 
    </head>
-   <body ng-controller="control" class="navbar-top  pace-done">
+   <body  class="navbar-top  pace-done">
       <div class="pace  pace-inactive">
          <div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
             <div class="pace-progress-inner"></div>
@@ -55,7 +58,7 @@
       <!-- Page content -->
       <div class="page-content">
          <!-- Main sidebar -->
-         <div class="sidebar sidebar-main sidebar-fixed " style="z-index:900">
+         <div ng-controller="control" class="sidebar sidebar-main sidebar-fixed " style="z-index:900">
             <div class="sidebar-content " style="overflow-y: hidden; outline: none;" tabindex="1">
                <!-- /user menu -->
                <!-- Main navigation -->
@@ -69,10 +72,11 @@
                         <li><a href="/"><i class="icon-home4"></i> <span>Home</span></a></li>
                         <!--  INICIO MENU-->
                         <li>
-                           <a href="#" class="has-ul"><i class="icon-stack"></i> <span>User</span></a>
+                           <a href="#" class="has-ul"><i class="icon-stack"></i> <span>Crud Using Angular</span></a>
                            <ul class="hidden-ul">
-                              <li><a href="#/list">List</a></li>
-                              <li><a href="#/new">New</a></li>
+                             <li><a href="#/list">Index/List</a></li>
+                             <li><a href="#/create">Create/Edit</a></li>
+                              <li><a href="#/github">Source/Github</a></li>
                            </ul>
                      </ul>
                   </div>
@@ -82,7 +86,8 @@
          <div class="content-wrapper">
                <h1 style="margin-top:0%" class="text-center">A little sample using angularjs</h1>
                <h1 style="margin-top:0%" class="text-center">Un petit exemple en utilisant angularjs</h1>
-              <div ng-view></div>
+              <div ng-view>             
+              </div>
          </div>
       </div>
       </div>

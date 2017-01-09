@@ -5,8 +5,7 @@ angular.module('app').filter('specificSearce', function () {
         if (keyname == null) {
             return collection
         } else {
-          
-        return  collection.filter(x=> x.country==keyname.country)
+                  return  collection.filter(x=> x.Country==keyname.Country)
         }
       
     };
