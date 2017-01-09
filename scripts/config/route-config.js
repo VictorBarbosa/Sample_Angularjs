@@ -11,6 +11,9 @@ angular.module('app').config(function ($routeProvider    ) {
     .when("/github", {
         templateUrl: 'views/crudAngular/github.html'
     })
+     .when("/crop", {
+        templateUrl: 'views/crop/crop.html'
+    })
        .otherwise({
         templateUrl: 'views/pageError.html'
       });// if page not found

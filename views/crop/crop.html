@@ -1,0 +1,70 @@
+<div ng-controller="cropcontroller">
+  <!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title Page</title>
+
+    <!-- jQuery -->
+    <script src="../../lib/jquery.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="../../lib/bootstrap.min.js"></script>
+    <script src="../../lib/cropImageMain.js"></script>
+    <script src="../../scripts/controllers/crop/cropImage.js"></script>
+    <link rel="stylesheet" href="../../css/cropimage.css">
+</head>
+
+<body>
+    <img style="margin-left: auto;margin-right: auto;display: block;border: 1px solid gray;;width: 200px;height: 200px;" id="foto" alt=""><br>
+     <a  style="display: block;text-align: center;" id="addPicture"  >>>>Add Picture Here<<<<<</a>
+<div style="margin-left: auto;margin-right: auto;display: table;width: 90%;" class="contaier">
+    <legend>Crop data:image/jpeg;base64
+      <a style="float:right" href="https://github.com/VictorBarbosa/cropPictureJS" target="_blank">Source/GitHub</a>
+    </legend>
+         <textarea id="txtCrop" style="width: 100%;" class="form-group" readonly rows="" cols=""></textarea>
+</div>
+    <div id="modalFoto"  class="modal fade" role="dialog">
+               <div class="container">
+             <div class="action">
+                <div class="btn-group btn-group-crop" style="margin-bottom: 0px">
+                    <div class="btn-group">
+                        <label class="btn btn-primary btn-upload" for="file" title="Upload image file" id="ui-id-1">
+                        <input type="file" class="sr-only" id="file" name="file" accept="image/*">
+                        <span class="docs-tooltip" data-toggle="tooltip" title="Import image with Blob URLs">
+                            <span class="fa fa-upload"> Search</span>
+                        </span>
+                    </label>
+                    </div>
+                    <button id="btnCrop" type="button" class="btn btn-primary">
+                    <span class="docs-tooltip" data-toggle="tooltip">
+                        Crop
+                    </span>
+                </button>
+                    <button id="btnZoomIn" type="button" class="btn btn-primary">
+                    <span class="docs-tooltip" data-toggle="tooltip">
+                       +
+                    </span>
+                </button>
+                    <button id="btnZoomOut" type="button" class="btn btn-primary">
+                    <span class="docs-tooltip" data-toggle="tooltip">
+                       -
+                    </span>
+                </button>
+                </div>
+            </div>
+            <div class="imageBox">
+                <div class="thumbBox"></div>
+                <div class="spinner" style="display: none">Carrengando...</div>
+            </div>
+            <div class="cropped">
+
+            </div> 
+        </div>
+         
+    </div>
+</body>
+</html>
+</div>

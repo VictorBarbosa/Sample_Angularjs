@@ -1,7 +1,7 @@
 angular.module('app').controller('userindexcontrol', function ($scope, userService, passParam) {
        userService.GetAll().success(function (retorno) {
         $scope.People = retorno;
-         passParam.setPerson({});
+         passParam.setPerson(null);
     });
 
   $scope.CreateNew = function () {
