@@ -9,27 +9,31 @@
       <link href="/css/bootstrap.css" rel="stylesheet" type="text/css">
       <link href="/css/core.css" rel="stylesheet" type="text/css">
       <link href="/css/components.css" rel="stylesheet" type="text/css">
- 
+      <link href="css/alertCSS.css" rel="stylesheet">
+
+
       <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
       <script src="//code.jquery.com/jquery.js"></script>
       <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
        <script type="text/javascript" src="scripts/core/app.js"></script>
     
- 
         <script src="scripts/app.js"></script>
         <script src="lib/angular-route.js"></script>
     
         <script src="scripts/config/route-config.js"></script>
         <script src="scripts/index.js"></script>
-    
+       <script src="scripts/factory/angular_alert_dialog.js"></script>
       <script src="scripts/services/unique.js"></script>
       <script src="scripts/services/specificSearch.js"></script>
       <script src="scripts/controllers/crudAngular/create.js"></script>
       <script src="scripts/controllers/crudAngular/index.js"></script>
       <script src="scripts/controllers/crop/crop.js"></script>
+      <script src="scripts/controllers/dialog/dialog.js"></script>
+
       <script src="scripts/services/userService.js"></script>
       <script src="scripts/factory/pass-param.js"></script>
+   
 
    </head>
    <body  class="navbar-top  pace-done">
@@ -87,12 +91,19 @@
                              <li><a href="#/crop">Sample</a></li>
                            </ul>
                         </li>
+                         <li>
+                           <a href="#" class="has-ul"><i class="icon-stack"></i> <span>Alert Dialog</span></a>
+                           <ul class="hidden-ul">
+                             <li><a href="#/dialog">Sample</a></li>
+                           </ul>
+                        </li>
                      </ul>
                   </div>
                </div>
             </div>
          </div>
          <div class="content-wrapper">
+            <div id="GesProAlert_Conteiner"></div>
                <h1 style="margin-top:0%" class="text-center">A little sample using angularjs</h1>
                <h1 style="margin-top:0%" class="text-center">Un petit exemple en utilisant angularjs</h1>
               <div ng-view>             

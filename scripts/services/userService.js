@@ -1,9 +1,9 @@
-angular.module('app').service('userService', function ($http) {
+angular.module('app').service('userService', function ($http, ngAlert) {
     var productList = [];
 
     var url = 'http://victorbarbosa-com-br.web04.redehost.net/api/Users';
     //Get All
-    var GetAll= function () {
+    var GetAll = function () {
         var config = {
             headers: {
                 "cache-control": "no-cache",
@@ -12,39 +12,40 @@ angular.module('app').service('userService', function ($http) {
         };
         return $http.get(url, config);
     };
-//Add
+    //Add
     var Add = function (newUser) {
-        debugger
-        $http.post(url,  newUser).success(function (retorno) {
-            debugger
+        $http.post(url, newUser).success(function (retorno) {
+            ngAlert.Alert_Sucess("Success to Save");
         }).error(function (erro) {
-            debugger
+            ngAlert.Alert_Error("Error to Save");
             console.log(erro);
         });
     };
-    var  Update = function (newUser) {
+    var Update = function (newUser) {
         $http.post('http://victorbarbosa-com-br.web04.redehost.net/api/update', newUser).success(function (retorno) {
-            debugger
-        }).error(function (erro) {
-            debugger
+        ngAlert.Alert_Sucess("Success to Update") ;
+       }).error(function (erro) {
+
+            ngAlert.Alert_Error("Error to Update");
             console.log(erro);
         });
     };
     var GetById = function (id) {
-        return $http.get('http://victorbarbosa-com-br.web04.redehost.net/api/Users/' + id);
+        return $http.get('http://victorbarbosa-com-br.web04.redehost.net/api/Users/' + id).error(function (erro) {
+            ngAlert.Alert_Error("Error :"+ erro);
+            console.log(erro);
+        });
     };
     var Delete = function (id) {
         return $http
             .get('http://victorbarbosa-com-br.web04.redehost.net/api/delete/?Id=' + id)
-           .success(function (retorno) {
-                debugger
+            .success(function (retorno) {
+                  ngAlert.Alert_Sucess("Success to Delete") 
             }).error(function (erro) {
-                debugger
+                ngAlert.Alert_Error("Erro to Delete")
                 console.log(erro);
             });
-
     };
-
     return {
         Add: Add,
         Update: Update,
@@ -52,5 +53,4 @@ angular.module('app').service('userService', function ($http) {
         GetById: GetById,
         Delete: Delete,
     };
-
-})
+});

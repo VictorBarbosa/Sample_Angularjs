@@ -1,0 +1,57 @@
+<div ng-controller="dialogControl">
+
+  <!--this div will show your message-->
+     
+      <div class="row" style="width: 100%;margin-left: 0px;">
+         <div class="col-md-2">
+            <div class="form-group">
+               <label asp-for="Nome" class="control-label col-lg-2"></label>
+               <div>
+                  <input class="form-control" type="button" style="background-color: #fff" value="Alert"   ng-click="Alert()"  >
+               </div>
+            </div>
+         </div>
+         <div class="col-md-2">
+            <div class="form-group">
+               <label asp-for="Nome" class="control-label col-lg-2"></label>
+               <div>
+                  <input class="form-control" type="button" style="background-color: #37BC9B;"value="Alert_Sucess"   ng-click="Alert_Sucess()"    >
+               </div>
+            </div>
+         </div>
+         <div class="col-md-2">
+            <div class="form-group">
+               <label asp-for="Nome" class="control-label col-lg-2"></label>
+               <div>
+                  <input class="form-control" type="button" style="background-color: #DA4453;" value="Alert_Error"   ng-click="Alert_Error()"   >
+               </div>
+            </div>
+         </div>
+         <div class="col-md-2">
+            <div class="form-group">
+               <label asp-for="Nome" class="control-label col-lg-2"></label>
+               <div>
+                  <input class="form-control" type="button" style="background-color: #F6BB42" value="Alert_Attention"   ng-click="Alert_Attention()"  >
+               </div>
+            </div>
+         </div>
+         <div class="col-md-2">
+            <div class="form-group">
+               <label asp-for="Nome" class="control-label col-lg-2"></label>
+               <div>
+                  <input class="form-control" type="button" style="background-color: #4A89DC" value="Alert_Neutro"   ng-click="Alert_Neutro()"   >
+               </div>
+            </div>
+         </div>
+          <div class="col-md-2">
+            <div class="form-group">
+               <label asp-for="Nome" class="control-label col-lg-2"></label>
+               <div>
+                  <input  class="form-control"  type="submit" style="background-color:gray" value="Source/GitHub" onclick="git.click()">
+                  <a id="git" target="blank" href="https://github.com/VictorBarbosa/Alert_Dialog"></a>
+               </div>
+            </div>
+         </div>
+      </div>
+</div>
+   

@@ -1,4 +1,5 @@
 angular.module('app').controller('usercreatecontrol', function ($scope, passParam, userService) {
+ 
     var person = passParam.getPerson();
     if (person === null || person.length > 0) {
         passParam.setPerson(person);
@@ -10,6 +11,7 @@ angular.module('app').controller('usercreatecontrol', function ($scope, passPara
         $scope.TitleButton = "Update";
     }
     $scope.AddUpdate = function (person, TitleButton) {
+
         if (TitleButton == "Save") {
             Save(person);
         } else {
